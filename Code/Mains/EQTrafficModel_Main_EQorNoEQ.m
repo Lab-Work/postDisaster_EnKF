@@ -1,4 +1,4 @@
-% EQTrafficModel_Main_EQorNoEQ: the main file to execute. 
+% EQTrafficModel_Main_EQorNoEQ_ImperfParams: the main file to execute. 
 % This will run a scenario with an earthquake or without an earthquake.
 
 tic
@@ -44,7 +44,7 @@ warning('Triangular fundamental diagram is assumed');
 % PRELOADED ROAD GEOMETRY
 
 % Choose the desired damage state of the Caruthersville Bridge
-dmgType=2; %1=MD, 2=HI, 3=TO
+dmgType=1; %1=MD, 2=HI, 3=TO
 
 if dmgType==1
     load Geom_Midwest_SensNoise5_MD.mat
@@ -57,7 +57,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 1 if there is EQ input in the evolution model
-isEQInp=1;
+isEQInp=0;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

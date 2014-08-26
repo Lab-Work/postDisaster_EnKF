@@ -26,14 +26,15 @@ for k=start:fin
     % Prior
     subplot(1,2,1)
     hold on
-    for i=1:noEn
+    for i=1:10
         plot(xi_m(:,1,i,k),'g')
     end
     
     % Add measurements
     boxplot(D_array{k}','positions',sortInd,'widths',.75)
-    title(['Prior, k=' num2str(k) ', T (s)=' num2str(measTime(k))...
-        ', y(k)= ' num2str(y(k,:))]);
+%     title(['Prior, k=' num2str(k) ', T (s)=' num2str(measTime(k))...
+%         ', y(k)= ' num2str(y(k,:))]);
+title(['Post, k=' num2str(k) ', T (s)=' num2str(measTime(k))]);
     xlabel('Cell')
     ylabel('Density')
     set(gca,'XTickLabelMode','auto','XTickMode','auto')
@@ -51,8 +52,9 @@ for k=start:fin
     
     % Add measurements
     boxplot(D_array{k}','positions',sortInd,'widths',.75)
-    title(['Post, k=' num2str(k) ', T (s)=' num2str(measTime(k))...
-        ', y(k)= ' num2str(y(k,:))]);
+%     title(['Post, k=' num2str(k) ', T (s)=' num2str(measTime(k))...
+%         ', y(k)= ' num2str(y(k,:))]);\
+title(['Post, k=' num2str(k) ', T (s)=' num2str(measTime(k))]);
     xlabel('Cell')
     ylabel('Density')
     set(gca,'XTickLabelMode','auto','XTickMode','auto')
@@ -61,10 +63,10 @@ for k=start:fin
     
     hold off
 
-    pause(pDuration);
+%     pause(pDuration);
     
     % Manually operate pause
-%     pause
+    pause
     
 
 

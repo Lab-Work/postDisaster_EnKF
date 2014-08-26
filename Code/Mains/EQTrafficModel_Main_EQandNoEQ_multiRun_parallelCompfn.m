@@ -1,4 +1,4 @@
-% EQTrafficModel_Main_EQandNoEQ_multiRun_parallelCompfn: this is the 
+% EQTrafficModel_Main_EQandNoEQ_multiRun_parallelCompfn_Imperf: this is the 
 % function form of the main code which is necessary to use parallel
 % computing in MATLAB
 %
@@ -8,7 +8,7 @@
 % of the earthquake.
 
 function [xMatNoise,xMatp2_nEQ,xMatp_nEQ,xMatp2_wEQ,xMatp_wEQ]=...
-    EQTrafficModel_Main_EQandNoEQ_multiRun_parallelCompfn
+    EQTrafficModel_Main_EQandNoEQ_multiRun_parallelCompfn_Imperf
 
 % Warnings:
 warning('Triangular fundamental diagram is assumed');
@@ -49,14 +49,14 @@ warning('Triangular fundamental diagram is assumed');
 % PRELOADED ROAD GEOMETRY
 
 % Choose the desired damage state of the Caruthersville Bridge
-dmgType=3; %1=MD, 2=HI, 3=TO
+dmgType=2; %1=MD, 2=HI, 3=TO
 
 if dmgType==1
-    RG=load('Geom_Midwest_SensNoise5_MD.mat');
+    RG=load('Geom_Midwest_SensNoise10_9Sensors_MD.mat');
 elseif dmgType==2
-    RG=load('Geom_Midwest_SensNoise5_HI.mat');
+    RG=load('Geom_Midwest_SensNoise10_9Sensors_HI.mat');
 else
-    RG=load('Geom_Midwest_SensNoise5_TO.mat');
+    RG=load('Geom_Midwest_SensNoise10_9Sensors_TO.mat');
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,7 +74,7 @@ teq=600;
 keq=(teq/DT)+1; % Kalman time step at which EQ occurs
 
 % EnKF Variables
-noEn=150; % number of ensemble members
+noEn=200; % number of ensemble members
 tolerance=1;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

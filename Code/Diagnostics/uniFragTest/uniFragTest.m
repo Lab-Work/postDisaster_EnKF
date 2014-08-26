@@ -76,33 +76,33 @@ ProbDS=getProbVec_Diag(Pex)
 DSlims=getDSRange_Diag(ProbDS)
 
 % % Simulate damage states
-for n=1:noEn
-    
-    for i=1:numBr
-        
-        % Draw from the DS distribution
-        draw=rand;
-        
-        % Determine the damage state
-        [ratio,DState]=compCap_Diag(DSlims(i,:),draw);
-        
-        % Compute new traffic capacity
-        cap=ratio*qmax;
-        
-        disp(['Bridge ' num2str(i) ', Draw ' num2str(n) ': ' num2str(draw) ', DS: ' DState ', Capacity: ' num2str(cap)]);
-        
-    end
-    
-    disp('...');
-    
-end
+% for n=1:noEn
+%     
+%     for i=1:numBr
+%         
+%         % Draw from the DS distribution
+%         draw=rand;
+%         
+%         % Determine the damage state
+%         [ratio,DState]=compCap_Diag(DSlims(i,:),draw);
+%         
+%         % Compute new traffic capacity
+%         cap=ratio*qmax;
+%         
+%         disp(['Bridge ' num2str(i) ', Draw ' num2str(n) ': ' num2str(draw) ', DS: ' DState ', Capacity: ' num2str(cap)]);
+%         
+%     end
+%     
+%     disp('...');
+%     
+% end
 
 % Plot fragility curves
 plot(PGAVec,p(1,:),PGAVec,p(2,:),'--',PGAVec,p(3,:),':')
-% set(gcf,'defaulttextinterpreter','latex');
 title('Fragility Curves');
-xlabel('PGA in g');
 ylabel('Probability of exceedence');
+set(gca,'defaulttextinterpreter','latex');
+xlabel('$A_{\textrm{H}}$ (g)');
 legend('Slight','Moderate','Complete');
 set(gca,'fontsize',9)
 set(findall(gcf,'type','text'),'fontsize',9);

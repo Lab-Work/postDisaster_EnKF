@@ -1,5 +1,5 @@
 % plotFundDiaEns: Plots the fundamental diagram for each ensemble in a
-% desired range.
+% desried range.
 %
 % INPUTS
 % mapLinks_array: a mapLinks array
@@ -71,11 +71,12 @@ for i=startEn:finEn
         
     end
     
-    pause(pDuration);
+    % pause(pDuration);
     
     % Manually control pause
-%     pause
-
+    pause
+    
+    % Comment to plot all ensembles at once
     clf
     
 end

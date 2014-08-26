@@ -1,4 +1,4 @@
-% EQTrafficModel_Main_EQandNoEQ_multiRun: This will run multiple
+% EQTrafficModel_Main_EQandNoEQ_multiRun_ImperfParams: This will run multiple
 % simulations with and without the earthquake. THIS IS NOT THE MAIN FILE TO
 % EXECUTE.
 %
@@ -49,11 +49,11 @@ warning('Triangular fundamental diagram is assumed');
 dmgType=2; %1=MD, 2=HI, 3=TO
 
 if dmgType==1
-    load Geom_Midwest_SensNoise5_MD.mat
+    load Geom_Midwest_SensNoise10_9Sensors_MD.mat
 elseif dmgType==2
-    load Geom_Midwest_SensNoise5_HI.mat
+    load Geom_Midwest_SensNoise10_9Sensors_HI.mat
 else
-    load Geom_Midwest_SensNoise5_TO.mat
+    load Geom_Midwest_SensNoise10_9Sensors_TO.mat
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

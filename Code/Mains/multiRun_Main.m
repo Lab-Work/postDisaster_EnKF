@@ -3,6 +3,10 @@
 
 close all; clear all; clc
 
+% Load folders
+addpath('CTM','Diagnostics','EvensenFns','GeomInputs','Kalman',...
+    'PostProcessing','RoadGeom','UnivariateFragility');
+
 % Number of simulations
 numSims=3;
 
@@ -17,7 +21,7 @@ for simCount=1:numSims
     
     % Run the script
     EQTrafficModel_Main_EQandNoEQ_multiRun
-    
+ 
     % Compute ratios based on BEEQ formuation
     
     ratioVec=zeros(1,numQuants);

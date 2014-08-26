@@ -1,4 +1,4 @@
-% EQTrafficModel_Main_EQandNoEQ_singleRun: the main file to 
+% EQTrafficModel_Main_EQandNoEQ_singleRun_ImperfParams: the main file to 
 % execute. This will run the same initial conditions with and without the 
 % earthquake.
 %
@@ -53,11 +53,11 @@ warning('Triangular fundamental diagram is assumed');
 dmgType=2; %1=MD, 2=HI, 3=TO
 
 if dmgType==1
-    load Geom_Midwest_SensNoise5_MD.mat
+    load Geom_Midwest_SensNoise10_9Sensors_MD.mat
 elseif dmgType==2
-    load Geom_Midwest_SensNoise5_HI.mat
+    load Geom_Midwest_SensNoise10_9Sensors_HI.mat
 else
-    load Geom_Midwest_SensNoise5_TO.mat
+    load Geom_Midwest_SensNoise10_9Sensors_TO.mat
 end
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,7 +75,7 @@ teq=600;
 keq=(teq/DT)+1; % Kalman time step at which EQ occurs
 
 % EnKF Variables
-noEn=150; % number of ensemble members
+noEn=200; % number of ensemble members
 tolerance=1;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

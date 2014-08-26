@@ -5,8 +5,12 @@
 % matlabpool open % necessary to use parallel computing in MATLAB
 close all; clear all; clc
 
+% Load folders
+addpath('CTM','Diagnostics','EvensenFns','GeomInputs','Kalman',...
+    'PostProcessing','RoadGeom','UnivariateFragility');
+
 % Number of simulations
-numSims=10;
+numSims=100;
 
 % Number of estimators to compute BEEQ of
 numQuants=3;
@@ -17,7 +21,7 @@ parfor (simCount=1:numSims,2)
     
     tic
     
-    % Run the function
+    % Run the function 
     [xMatNoise,xMatp2_nEQ,xMatp_nEQ,xMatp2_wEQ,xMatp_wEQ]=...
         EQTrafficModel_Main_EQandNoEQ_multiRun_parallelCompfn;
     
