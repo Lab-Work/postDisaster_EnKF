@@ -45,6 +45,6 @@ imagesc(x_vec,t_vec,xMat(:,x_vec));
 colorbar
 caxis([0,maxrhoj]);
 set(gca,'Ydir','normal');
-% title('Space-time Density, \rho(x,t)');
+title('Traffic Density (veh/km)');
 xlabel('Cell');
 ylabel('Time (sec)');
